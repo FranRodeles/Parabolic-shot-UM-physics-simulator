@@ -1,5 +1,5 @@
 """
-Parámetros simples para la versión día 3.
+Parámetros para la versión día 4.
 """
 
 PROJECTILE = {

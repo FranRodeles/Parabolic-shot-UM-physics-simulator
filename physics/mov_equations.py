@@ -1,8 +1,6 @@
 """
-Ecuaciones de movimiento para el día 3.
+Ecuaciones de movimiento para el día 4.
 """
-
-from __future__ import annotations
 
 from physics.forces import gravity_force, quadratic_drag_force
 
@@ -18,14 +16,8 @@ def state_derivative(
 	wind_y_m_s: float,
 	include_drag: bool,
 ) -> list[float]:
-	"""
-	Devuelve la derivada temporal del estado [x, y, vx, vy].
-	"""
-
 	x, y, vx, vy = state
-
 	fx, fy = gravity_force(mass_kg, gravity_m_s2)
-
 	if include_drag:
 		rel_vx = vx - wind_x_m_s
 		rel_vy = vy - wind_y_m_s
@@ -38,8 +30,6 @@ def state_derivative(
 		)
 		fx += dfx
 		fy += dfy
-
 	ax = fx / mass_kg
 	ay = fy / mass_kg
-
 	return [vx, vy, ax, ay]

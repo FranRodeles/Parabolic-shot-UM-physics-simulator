@@ -1,8 +1,6 @@
 """
-Simulación con Euler y resistencia del aire (día 3).
+Simulación con Euler y resistencia (día 4).
 """
-
-from __future__ import annotations
 
 import math
 
@@ -24,20 +22,14 @@ def simulate(
 	time_step_s: float,
 	time_max_s: float,
 	include_drag: bool,
-) -> dict:
-	"""
-	Simula el movimiento con el método de Euler.
-	Devuelve un resumen simple con alcance, altura máxima y tiempo de vuelo.
-	"""
-
+) -> list[tuple[float, float]]:
 	angle_rad = math.radians(launch_angle_deg)
 	vx0 = initial_speed_m_s * math.cos(angle_rad)
 	vy0 = initial_speed_m_s * math.sin(angle_rad)
-
 	state = [0.0, 0.0, vx0, vy0]
 	area_m2 = area_from_radius(radius_m)
 
-	max_height = state[1]
+	positions: list[tuple[float, float]] = [(state[0], state[1])]
 	t = 0.0
 
 	def derivative(_t: float, st: list[float]) -> list[float]:
@@ -56,11 +48,6 @@ def simulate(
 	while t < time_max_s and state[1] >= 0.0:
 		state = euler_step(derivative, t, state, time_step_s)
 		t += time_step_s
-		if state[1] > max_height:
-			max_height = state[1]
+		positions.append((state[0], state[1]))
 
-	return {
-		"alcance_m": state[0],
-		"altura_max_m": max_height,
-		"tiempo_s": t,
-	}
+	return positions
