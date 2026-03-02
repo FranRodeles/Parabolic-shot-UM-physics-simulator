@@ -1,1 +1,33 @@
-{}
+{
+  "parametros": {
+    "masa_kg": 0.145,
+    "radio_m": 0.0366,
+    "coeficiente_arrastre": 0.47,
+    "densidad_aire_kg_m3": 1.225,
+    "velocidad_inicial_m_s": 30.0,
+    "angulo_inicial_deg": 45.0,
+    "posicion_inicial_m": [
+      0.0,
+      0.0
+    ],
+    "paso_tiempo_s": 0.01,
+    "tiempo_max_s": 10.0,
+    "gravedad_m_s2": 9.80665,
+    "viento_m_s": [
+      5.0,
+      0.0
+    ]
+  },
+  "ideal": {
+    "alcance_m": 91.85317087613242,
+    "altura_maxima_m": 22.943566300888133,
+    "tiempo_total_s": 4.329999999999952,
+    "rapidez_final_m_s": 30.025740963453103
+  },
+  "con_viento": {
+    "alcance_m": 67.38402201637989,
+    "altura_maxima_m": 18.324774145622904,
+    "tiempo_total_s": 3.8699999999999615,
+    "rapidez_final_m_s": 22.63876898956299
+  }
+}
