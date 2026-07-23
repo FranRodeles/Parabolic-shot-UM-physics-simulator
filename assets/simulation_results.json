@@ -4,7 +4,7 @@
     "radio_m": 0.0366,
     "coeficiente_arrastre": 0.47,
     "densidad_aire_kg_m3": 1.225,
-    "velocidad_inicial_m_s": 30.0,
+    "velocidad_inicial_m_s": 35.0,
     "angulo_inicial_deg": 45.0,
     "posicion_inicial_m": [
       0.0,
